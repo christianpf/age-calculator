@@ -107,17 +107,17 @@ function App() {
     <main>
       <div className='calculator'>
         <form className='calculator__form' onSubmit={handleSubmit}>
-          <div className='calculator__input'>
+          <div className={`calculator__input ${!errors.dayValid && "error"}`}>
             <label htmlFor="day">DAY</label>
             <input type='number' name="day" placeholder="DD" className='calculator__input-input'></input>
             {!errors.dayValid && <p className='error__message'>{errors.formErrors.day}</p>}
           </div>
-          <div className='calculator__input'>
+          <div className={`calculator__input ${!errors.monthValid && "error"}`}>
             <label>MONTH</label>
             <input type='number' name="month" placeholder='MM' className='calculator__input-input'></input>
             {!errors.monthValid && <p className='error__message'>{errors.formErrors.month}</p>}
           </div>
-          <div className='calculator__input'>
+          <div className={`calculator__input ${!errors.yearValid && "error"}`}>
             <label>YEAR</label>
             <input type='number' name="year" placeholder="YYYY" className='calculator__input-input'></input>
             {!errors.yearValid && <p className='error__message'>{errors.formErrors.year}</p>}
